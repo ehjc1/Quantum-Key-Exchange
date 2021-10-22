@@ -22,8 +22,10 @@ class Qubit():
             return self.value
         # If not match selt current polartization to the polarization parsed in
         else:
-            self.polarization = polarization
-            self.value = random.random()
+            if polarization == 0:
+                self.set(random.random(), 1)
+            else:
+                self.set(random.random(), 0)
             return self.value
 
         
